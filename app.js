@@ -7,6 +7,9 @@ const mongoose = require('mongoose');
 const logger = require('./middlewares/logger');
 const { notFoundHandler, errorHandler } = require('./middlewares/errorHandler');
 
+const pinjamanRoutes = require('./routes/pinjamanRoutes');
+const petugasRoutes = require('./routes/petugasRoutes');
+
 const app = express();
 const PORT = process.env.PORT;
 
@@ -26,6 +29,12 @@ app.use(logger);
 app.get('/', (req, res) => {
   res.json({ message: 'Server berjalan' });
 });
+
+// Route per modul
+app.use('/pinjaman', pinjamanRoutes);
+app.use('/petugas', petugasRoutes);
+app.use('/api/pinjaman', pinjamanRoutes);
+app.use('/api/petugas', petugasRoutes);
 
 // Handler 404 dan error handler terpusat didaftarkan paling akhir
 app.use(notFoundHandler);
