@@ -1,15 +1,28 @@
 {
-  "name": "uts-paw2-2428240077",
+  "name": "restful-api-app",
   "version": "1.0.0",
-  "description": "UTS Pengembangan Aplikasi Web II - Koperasi Simpan Pinjam (Pinjaman)",
+  "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "node tests/run-newman.js",
+    "seed": "node seed.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
-    "dotenv": "^18.0.9",
+    "dotenv": "^18.0.4",
     "express": "^5.3.0",
-    "mongoose": "^9.12.0"
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.2"
+  },
+  "devDependencies": {
+    "newman": "^6.2.3",
+    "nodemon": "^3.1.14"
   }
 }
